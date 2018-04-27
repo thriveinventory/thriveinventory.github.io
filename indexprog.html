@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <title>Thrive Programmatic Supplies</title>
+  <meta content="Thrive Invetory for Programmatic Supplies" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="favicon.ico" rel="shortcut icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+</head>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 80%;
+        background-color: #f1f1f1;
+        border: 1px solid #555;
+        font-family: "Times New Roman";
+        font-size: 22px;
+    }
+
+    li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+        text-align: center;
+        border-bottom: 1px solid #555;
+        font-family: "Times New Roman";
+        font-size: 16px;
+    }
+
+
+    /* Change the link color on hover */
+    li a:hover {
+        background-color: #555;
+        color: white;
+    }
+
+    h2{
+      font-size: 35px;
+      font-family: "Times New Roman";
+    }
+    </style>
+
+  </head>
+  <body style="background-color: gold;" id="background">
+    <center>
+  	<h1><img src="http://wp-cdn.aws.wfu.edu/wp-content/uploads/sites/197/2017/09/07103201/Thrive_Horz.png" alt="Thrive" width=40% height=auto></h1>
+    <h2> Thrive Programmatic Supplies </h2>
+  </center>
+  <div id="box">
+    <script src="js/google-sheets-html-prog.js" type="text/javascript"></script>
+    <div id="table">
+    </div>
+  </div>
+  <center>
+    <ul>
+    <li> <a onclick="window.location.href='https://docs.google.com/spreadsheets/d/1d5GD5gf978H3bX-CLr-w6vEZf-xG6SEzn3CsIw-_-ZE/edit?usp=sharing'"/>Edit Data</a></li>
+  </ul>
+  <center>
+</body>
+<script>
+  google.load('visualization', '1', {
+    packages: ['table']
+});
+var visualization;
+
+function drawVisualization() {
+    var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1d5GD5gf978H3bX-CLr-w6vEZf-xG6SEzn3CsIw-_-ZE&output=html&usp=sharing');
+    query.setQuery('SELECT A, B, C, D, E label A "Program", B "Item", C "Quantity", D "Descritpion", E "History"');
+    query.send(handleQueryResponse);
+}
+
+function handleQueryResponse(response) {
+    if (response.isError()) {
+        alert('There was a problem with your query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+    }
+    var data = response.getDataTable();
+    visualization = new google.visualization.Table(document.getElementById('table'));
+    visualization.draw(data, {
+        allowHtml: true,
+        legend: 'bottom'
+    });
+}
+google.setOnLoadCallback(drawVisualization);
+
+</script>
+</html>

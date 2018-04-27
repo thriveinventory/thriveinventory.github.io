@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rental Form for Thrive Items</title>
+</head>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQt06VX0JoxcjD8UVIURZl7gNZE6aGIkwdTMMrTQ9EWY2tNbV4Fxn5Arq9IwC65vgQHvj9T3Sv7YcHN/pubhtml?widget=true&amp;headers=false" width="400" height="300"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=wfu.edu_qm1vp6l2ve1p64dngq2khm7490%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+<body>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+<form id="rentals-form" action="" method="POST" target="no-target">
+  <input id="WFUusernameInput" placeholder="Enter WFU Username: " name="username" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="StudentIDinput" placeholder="Enter student ID: " name="ID" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="DurationInput" placeholder="When do you need this item? (Please consult the calendar first.) " style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="PurposeInput" placeholder="What is your purpose with this item? " name="purpose" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="ProgramInput" placeholder="What program are you associated with? " name="prog" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="BudgetCodeInput" placeholder="Enter your budget code: " name="code" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <button id="form-submit" type="submit">Click here to submit your request for approval.</button>
+</form>
+
+<iframe src="#" id="no-target" name="no-target" style="visibility:hidden"></iframe>
+
+<script>
+    $('#rentals-form').one('submit',function(){
+        var baseURL = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdnPORJZrOq1bccgZVDjp6b4WDxr0HFjvK8rmOyYFrMypMMjg/formResponse?";
+        var submitRef = '&submit=Submit';
+
+        var WFUusername = encodeURIComponent($('#WFUusernameInput').val());
+        var usernameIDentry = "entry.721388019";
+        var StudentID = encodeURIComponent($('#StudentIDinput').val());
+        var studentIDentry = "entry.90971211";
+        var Duration = encodeURIComponent($('#DurationInput').val());
+        var durationEntryID = "entry.520610671";
+        var Purpose = encodeURIComponent($('#PurposeInput').val());
+        var purposeEntryID = "entry.1129412563";
+        var Program = encodeURIComponent($('#ProgramInput').val());
+        var programEntryID = "entry.736251652";
+        var BudgetCode = encodeURIComponent($('#BudgetCodeInput').val());
+        var budgetCodeEntryID = "entry.267882782";
+
+        var submitURL = (baseURL + usernameIDentry + "=" + WFUusername + "&" + studentIDentry + "=" + StudentID + "&" + durationEntryID + "=" + Duration + "&" + purposeEntryID + "=" + Purpose + "&" + programEntryID + "=" + Program + "&" + budgetCodeEntryID + "=" + BudgetCode + submitRef);
+
+        console.log(submitURL);
+        $(this)[0].action=submitURL;
+        $('#WFUusernameInput').addClass('active').val('Thank You!');
+    });
+</script>
+
+</body>
+</html>
