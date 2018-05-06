@@ -6,29 +6,29 @@ app.listen(3000, function() {
 })
 
 app.get('/', function(request, response) {
-	response.sendFile('/Users/jenniferwilson/Desktop/ThriveCode' + '/dashboard.html')
+	response.sendFile('__dirname' + '/dashboard.html')
 })
 
 app.get('/rentalsform.html', function(request, response){
-	response.sendFile('/Users/jenniferwilson/Desktop/ThriveCode' + '/rentalsform.html')
+	response.sendFile('__dirname' + '/rentalsform.html')
 })
 
 app.get('/main.html', function(request, response){
-	response.sendFile('/Users/jenniferwilson/Desktop/ThriveCode' + '/main.html')
+	response.sendFile('__dirname' + '/main.html')
 })
 
 app.get('/indexreusables.html', function(request, response) {
-	response.sendFile('/Users/jenniferwilson/Desktop/ThriveCode' + '/indexreusables.html')
+	response.sendFile('__dirname' + '/indexreusables.html')
 })
 
 app.get('/indexgiveaways.html', function(request, response) {
-	response.sendFile('/Users/jenniferwilson/Desktop/ThriveCode' + '/indexgiveaways.html')
+	response.sendFile('__dirname' + '/indexgiveaways.html')
 })
 
 app.get('/indexmisc.html', function(request, response) {
-	response.sendFile('/Users/jenniferwilson/Desktop/ThriveCode' + '/indexmisc.html')
+	response.sendFile('__dirname' + '/indexmisc.html')
 })
 
 app.get('/indexprog.html', function(request, response) {
-	response.sendFile('/Users/jenniferwilson/Desktop/ThriveCode' + '/indexprog.html')
+	response.sendFile('__dirname' + '/indexprog.html')
 })
