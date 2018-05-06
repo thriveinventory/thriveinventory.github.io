@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>Rental Form for Thrive Items</title>
+</head>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQt06VX0JoxcjD8UVIURZl7gNZE6aGIkwdTMMrTQ9EWY2tNbV4Fxn5Arq9IwC65vgQHvj9T3Sv7YcHN/pubhtml?widget=true&amp;headers=false" width="400" height="300"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=wfu.edu_qm1vp6l2ve1p64dngq2khm7490%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+<body>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+
+<form id="rentals-form" action="" method="POST" target="no-target">
+  <input id="itemnameInput" placeholder="Enter the name of the item: " name="itemname" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="nameInput" placeholder="Enter your name: " name="username" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="WFUIDinput" placeholder="Enter your WFU ID: " name="ID" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="DurationInput" placeholder="When do you need this item? (Please consult the calendar first.) " style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="PurposeInput" placeholder="What is your purpose with this item? " name="purpose" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <input id="ProgramInput" placeholder="What program are you associated with? " name="prog" style="height:20px; width:400px; font-size:12pt;"> 
+  <div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">List of Programs</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">AlcoholEdu</a>
+    <a href="#about">Arrive and Thrive</a>
+    <a href="#contact">Bystander Intervention</a>
+    <a>DBM</a>
+    <a>Dimension Champions</a>
+    <a>Employee Engagement</a>
+    <a>Gold Apron</a>
+    <a>Healthy Campus 2020</a>
+    <a>Mobile Mammography</a>
+    <a>Move More! Move Often!</a>
+    <a>My Student Body</a>
+    <a>National Alcohol Screening Day</a>
+    <a>New Student Orientation</a>
+    <a>New Faculty Orientation</a>
+    <a>Peer Education</a>
+    <a>Rise and Grind</a>
+    <a>SAC Picnic</a>
+    <a>Senior Fifth</a>
+    <a>Self-Care Week</a>
+    <a>Sexual Health Supplies</a>
+    <a>Sleepin' Deacon</a>
+    <a>Social Norms</a>
+    <a>Signs of Stress Campaign</a>
+    <a>Stress Management Resources</a>
+    <a>Student Involvement Fair</a>
+    <a>Tabacco Free Campus</a>
+    <a>Toward A Mindful Campus</a>
+    <a>Wake n Shake</a>
+    <a>Wellbeing Housing</a>
+    <a>Wellbeing Prompt of the Week</a>
+    <a>Wellspaces</a>
+  </div>
+</div><p></p>
+  <input id="BudgetCodeInput" placeholder="Enter your budget code: " name="code" style="height:20px; width:400px; font-size:12pt;"> <p></p>
+  <button id="form-submit" type="submit">Click here to submit your request for approval.</button>
+</form>
+
+<iframe src="#" id="no-target" name="no-target" style="visibility:hidden"></iframe>
+
+<script>
+    /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+    $('#rentals-form').one('submit',function(){
+        var baseURL = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdnPORJZrOq1bccgZVDjp6b4WDxr0HFjvK8rmOyYFrMypMMjg/formResponse?";
+        var submitRef = '&submit=Submit';
+
+        var itemName = encodeURIComponent($('#itemnameInput').val());
+        var itemNameID = "";
+        var name = encodeURIComponent($('#nameInput').val());
+        var Nameentry = "entry.721388019";
+        var WFUID = encodeURIComponent($('#WFUIDinput').val());
+        var WFUIDentry = "entry.90971211";
+        var Duration = encodeURIComponent($('#DurationInput').val());
+        var durationEntryID = "entry.520610671";
+        var Purpose = encodeURIComponent($('#PurposeInput').val());
+        var purposeEntryID = "entry.1129412563";
+        var Program = encodeURIComponent($('#ProgramInput').val());
+        var programEntryID = "entry.736251652";
+        var BudgetCode = encodeURIComponent($('#BudgetCodeInput').val());
+        var budgetCodeEntryID = "entry.267882782";
+
+        var submitURL = (baseURL + + itemNameID + "=" + itemName + "&" + Nameentry + "=" + name + "&" + WFUIDentry + "=" + WFUID + "&" + durationEntryID + "=" + Duration + "&" + purposeEntryID + "=" + Purpose + "&" + programEntryID + "=" + Program + "&" + budgetCodeEntryID + "=" + BudgetCode + submitRef);
+
+        console.log(submitURL);
+        $(this)[0].action=submitURL;
+        $('#WFUusernameInput').addClass('active').val('Thank You!');
+    });
+</script>
+
+</body>
+</html>
