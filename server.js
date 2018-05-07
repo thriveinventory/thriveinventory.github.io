@@ -5,7 +5,7 @@ app.listen(3000, function() {
 	console.log('listening on 3000')
 })
 
-app.get('/app', function(request, response) {
+app.get('../app', function(request, response) {
 	response.sendFile(__dirname + '/dashboard.html')
 })
 
