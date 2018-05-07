@@ -2,9 +2,9 @@
   "name": "thrive-inventory-gs",
   "version": "1.0.0",
   "description": "Uses googlesheets as databases to store information about inventory within the Office of Wellbeing at WFU.",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   "homepage": "https://github.com/wilsjs14/thrive-inventory-gs#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "node": "^10.0.0"
+    "node": "^10.0.0",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.3"
