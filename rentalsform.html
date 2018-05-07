@@ -122,23 +122,23 @@ window.onclick = function(event) {
 }
 
     $('#rentals-form').one('submit',function(){
-        var baseURL = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdnPORJZrOq1bccgZVDjp6b4WDxr0HFjvK8rmOyYFrMypMMjg/formResponse?";
+        var baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSeALjMQ9gxf85hjlNfzAOxz-iEhW_GXSKoalnBJKexyCvklZA/formResponse?";
         var submitRef = '&submit=Submit';
 
         var itemName = encodeURIComponent($('#itemnameInput').val());
-        var itemNameID = "entry.1272149427";
+        var itemNameID = "entry.806301504";
         var name = encodeURIComponent($('#nameInput').val());
-        var Nameentry = "entry.721388019";
+        var Nameentry = "entry.1850736645";
         var WFUID = encodeURIComponent($('#WFUIDinput').val());
-        var WFUIDentry = "entry.90971211";
+        var WFUIDentry = "entry.302822943";
         var Duration = encodeURIComponent($('#DurationInput').val());
-        var durationEntryID = "entry.520610671";
+        var durationEntryID = "entry.653343867";
         var Purpose = encodeURIComponent($('#PurposeInput').val());
-        var purposeEntryID = "entry.1129412563";
+        var purposeEntryID = "entry.840805868";
         var Program = encodeURIComponent($('#ProgramInput').val());
-        var programEntryID = "entry.736251652";
+        var programEntryID = "entry.2044062998";
         var BudgetCode = encodeURIComponent($('#BudgetCodeInput').val());
-        var budgetCodeEntryID = "entry.267882782";
+        var budgetCodeEntryID = "entry.812195862";
 
         var submitURL = (baseURL + itemNameID + "=" + itemName + "&" + Nameentry + "=" + name + "&" + WFUIDentry + "=" + WFUID + "&" + durationEntryID + "=" + Duration + "&" + purposeEntryID + "=" + Purpose + "&" + programEntryID + "=" + Program + "&" + budgetCodeEntryID + "=" + BudgetCode + submitRef);
 
