@@ -140,7 +140,7 @@ window.onclick = function(event) {
         var BudgetCode = encodeURIComponent($('#BudgetCodeInput').val());
         var budgetCodeEntryID = "entry.267882782";
 
-        var submitURL = (baseURL + + itemNameID + "=" + itemName + "&" + Nameentry + "=" + name + "&" + WFUIDentry + "=" + WFUID + "&" + durationEntryID + "=" + Duration + "&" + purposeEntryID + "=" + Purpose + "&" + programEntryID + "=" + Program + "&" + budgetCodeEntryID + "=" + BudgetCode + submitRef);
+        var submitURL = (baseURL + itemNameID + "=" + itemName + "&" + Nameentry + "=" + name + "&" + WFUIDentry + "=" + WFUID + "&" + durationEntryID + "=" + Duration + "&" + purposeEntryID + "=" + Purpose + "&" + programEntryID + "=" + Program + "&" + budgetCodeEntryID + "=" + BudgetCode + submitRef);
 
         console.log(submitURL);
         $(this)[0].action=submitURL;
