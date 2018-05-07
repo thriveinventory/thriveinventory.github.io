@@ -5,7 +5,7 @@ app.listen(3000, function() {
 	console.log('listening on 3000')
 })
 
-app.get('/', function(request, response) {
+app.get('/app', function(request, response) {
 	response.sendFile(__dirname + '/dashboard.html')
 })
 
@@ -32,3 +32,4 @@ app.get('/indexmisc.html', function(request, response) {
 app.get('/indexprog.html', function(request, response) {
 	response.sendFile(__dirname + '/indexprog.html')
 })
+
