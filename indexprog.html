@@ -74,7 +74,7 @@ var visualization;
 
 function drawVisualization() {
     var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1d5GD5gf978H3bX-CLr-w6vEZf-xG6SEzn3CsIw-_-ZE&output=html&usp=sharing');
-    query.setQuery('SELECT A, B, C, D, E, F label A "Item Name", B "Program Name", C "Date Quantity Updated", D "Quantity", E "Description", F "Notes/Location"');
+    query.setQuery('SELECT A, B, C, D, E, F label A "Item Name", B "Program Name", C "Date Added to Programmatic Supplies", D "Date Quantity Updated", E "Quantity", F "Notes/Description/Location"');
     query.send(handleQueryResponse);
 }
 
