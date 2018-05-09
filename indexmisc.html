@@ -74,7 +74,7 @@ var visualization;
 
 function drawVisualization() {
     var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1dbDCOlJFXfZ7MvE30I9mu3IJzdbhl3J2GmULeqdgAZo&output=html&usp=sharing');
-    query.setQuery('SELECT A, B, C, D label A "Item", B "Quantity", C "Descritpion", D "History"');
+    query.setQuery('SELECT A, B, C, D, E, F label A "Item Name", B "Date Quantity Updated", C "Quantity", D "Description", E "Notes/Location", F "Tabling Closet?"');
     query.send(handleQueryResponse);
 }
 
